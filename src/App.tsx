@@ -76,7 +76,11 @@ export default function App() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const sarahniId = urlParams.get('sarahni');
-    if (sarahniId) {
+    const isAdmin = urlParams.get('admin');
+    
+    if (isAdmin === 'true') {
+      setAppState('admin_dashboard');
+    } else if (sarahniId) {
       setConfessionRecipientId(sarahniId);
       setAppState('send_confession');
     } else if (appState === 'send_confession') {

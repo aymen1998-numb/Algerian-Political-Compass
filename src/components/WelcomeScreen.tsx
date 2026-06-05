@@ -236,15 +236,6 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
           <Briefcase className="w-8 h-8 text-gray-400" />
         </button>
 
-        {/* ADMIN DASHBOARD BUTTON */}
-        <button
-          onClick={() => setAppState('admin_dashboard')}
-          className="p-4 bg-zinc-900/50 hover:bg-zinc-800 border border-indigo-500/10 text-center rounded-2xl shadow-sm transition-all hover:scale-105 active:scale-95 col-span-1 md:col-span-2 lg:col-span-3 mt-8 opacity-70 hover:opacity-100"
-        >
-          <span className="text-sm font-bold text-zinc-500 hover:text-indigo-400 flex items-center justify-center gap-2">
-            لوحة المشرف والإدارة <Shield className="w-4 h-4" />
-          </span>
-        </button>
       </div>
     </motion.div>
   );
