@@ -115,7 +115,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = memo(({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, type: 'spring' }}
-      className={`glass-panel p-8 sm:p-12 rounded-3xl shadow-2xl space-y-8 relative overflow-hidden flex flex-col ${isGeneratingImage ? 'border-none' : 'border border-white/10'}`}
+      className={`glass-panel p-5 sm:p-12 rounded-3xl shadow-2xl space-y-6 sm:space-y-8 relative overflow-hidden flex flex-col ${isGeneratingImage ? 'border-none' : 'border border-white/10'}`}
       style={{ backgroundColor: isGeneratingImage ? '#0f0f13' : undefined }}
     >
       <div className={`absolute top-0 right-0 p-8 opacity-10 pointer-events-none transform -rotate-12 ${color}`}>
@@ -123,17 +123,17 @@ export const ResultScreen: React.FC<ResultScreenProps> = memo(({
       </div>
 
       <div className="relative z-10 text-center">
-        <span className={`inline-block px-4 py-2 rounded-xl bg-zinc-800 ${color} font-semibold text-sm sm:text-base mb-6 border border-current/20`}>
+        <span className={`inline-block px-4 py-1.5 rounded-xl bg-zinc-800 ${color} font-semibold text-sm sm:text-base mb-4 sm:mb-6 border border-current/20`}>
           {title}
         </span>
         
-        <h3 className="text-2xl text-gray-400 mb-2">{subTitle}</h3>
-        <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-black mb-6 leading-tight flex flex-col items-center justify-center gap-4 ${color}`}>
+        <h3 className="text-xl sm:text-2xl text-gray-400 mb-2">{subTitle}</h3>
+        <h2 className={`text-2xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 leading-tight flex flex-col items-center justify-center gap-2 sm:gap-4 ${color}`}>
           {smallIcon}
           <span>{name}</span>
         </h2>
         
-        <p className="text-xl text-gray-300 leading-relaxed max-w-lg mx-auto bg-black/20 p-6 rounded-2xl border border-white/5 mb-8">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg mx-auto bg-black/20 p-4 sm:p-6 rounded-2xl border border-white/5 mb-6 sm:mb-8">
           {description}
         </p>
 
@@ -202,43 +202,43 @@ export const ResultScreen: React.FC<ResultScreenProps> = memo(({
       </div>
 
       {!isGeneratingImage && (
-        <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center relative z-10 border-t border-white/10 pt-6">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3 justify-center relative z-10 border-t border-white/10 pt-5 sm:pt-6">
           
           {(onShareFacebook || onShareInstagram || onShareTwitter || onShareWhatsApp) && (
-            <div className="w-full flex gap-3 justify-center mb-4 flex-wrap">
+            <div className="w-full flex gap-2 sm:gap-3 justify-center mb-2 sm:mb-4 flex-wrap">
               {onShareFacebook && (
                 <button
                   onClick={onShareFacebook}
-                  className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-4 bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold rounded-xl transition-all shadow-lg active:scale-95"
+                  className="flex-1 min-w-[110px] sm:min-w-[140px] flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-3 sm:px-4 sm:py-4 bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
                 >
-                  <Share2 className="w-5 h-5 fill-current" />
+                  <Share2 className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                   <span>فيسبوك</span>
                 </button>
               )}
               {onShareInstagram && (
                 <button
                   onClick={onShareInstagram}
-                  className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-4 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] hover:opacity-90 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95"
+                  className="flex-1 min-w-[110px] sm:min-w-[140px] flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-3 sm:px-4 sm:py-4 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] hover:opacity-90 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
                 >
-                  <Instagram className="w-5 h-5 fill-current" />
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                   <span>إنستغرام</span>
                 </button>
               )}
               {onShareTwitter && (
                 <button
                   onClick={onShareTwitter}
-                  className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-4 bg-black hover:bg-zinc-800 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 border border-white/20"
+                  className="flex-1 min-w-[110px] sm:min-w-[140px] flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-3 sm:px-4 sm:py-4 bg-black hover:bg-zinc-800 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 border border-white/20 text-sm sm:text-base"
                 >
-                  <Twitter className="w-5 h-5 fill-current text-white" />
-                  <span>X (تويتر)</span>
+                  <Twitter className="w-4 h-4 sm:w-5 sm:h-5 fill-current text-white" />
+                  <span>X</span>
                 </button>
               )}
               {onShareWhatsApp && (
                 <button
                   onClick={onShareWhatsApp}
-                  className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-4 bg-[#25D366] hover:bg-[#20BE5A] text-white font-bold rounded-xl transition-all shadow-lg active:scale-95"
+                  className="flex-1 min-w-[110px] sm:min-w-[140px] flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-3 sm:px-4 sm:py-4 bg-[#25D366] hover:bg-[#20BE5A] text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
                 >
-                  <MessageCircle className="w-5 h-5 fill-current" />
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
                   <span>واتساب</span>
                 </button>
               )}
@@ -248,17 +248,17 @@ export const ResultScreen: React.FC<ResultScreenProps> = memo(({
           {pendingQuiz && (
             <button
               onClick={pendingQuiz.start}
-              className={`flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 ${pendingQuiz.colorName} ${pendingQuiz.hoverColorName}`}
+              className={`flex-1 min-w-[150px] sm:min-w-[200px] flex items-center justify-center gap-2 px-3 py-3 sm:px-4 sm:py-4 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 text-sm sm:text-base ${pendingQuiz.colorName} ${pendingQuiz.hoverColorName}`}
             >
               <span>{nextButtonLabel || pendingQuiz.title}</span>
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           )}
 
           {onFullProfile && (
             <button
               onClick={onFullProfile}
-              className="flex-1 min-w-[200px] flex items-center justify-center gap-2 px-4 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95"
+              className="flex-1 min-w-[150px] sm:min-w-[200px] flex items-center justify-center gap-2 px-3 py-3 sm:px-4 sm:py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
             >
               <span>البروفايل الكامل</span>
             </button>
@@ -267,9 +267,9 @@ export const ResultScreen: React.FC<ResultScreenProps> = memo(({
           {onHome && (
             <button
               onClick={onHome}
-              className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-4 glass-panel hover:bg-white/10 text-white font-bold rounded-xl transition-all active:scale-95"
+              className="flex-1 min-w-[110px] sm:min-w-[140px] flex items-center justify-center gap-2 px-3 py-3 sm:px-4 sm:py-4 glass-panel hover:bg-white/10 text-white font-bold rounded-xl transition-all active:scale-95 text-sm sm:text-base"
             >
-              <Home className="w-5 h-5" />
+              <Home className="w-4 h-4 sm:w-5 sm:h-5" />
               <span>الرئيسية</span>
             </button>
           )}

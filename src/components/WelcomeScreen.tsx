@@ -62,7 +62,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
         </motion.div>
       )}
 
-      <div className="glass-panel p-8 sm:p-12 rounded-3xl shadow-2xl">
+      <div className="glass-panel p-5 sm:p-12 rounded-3xl shadow-2xl">
         <div className="flex justify-center">
           <div className="relative">
             <div className="absolute inset-0 bg-indigo-500 blur-3xl opacity-30 rounded-full animate-pulse"></div>
@@ -71,11 +71,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
         </div>
         
         <div className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-4">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
             بوصلة الشارع الجزائري <br />
-            <span className="text-indigo-400 mt-4 block font-extrabold drop-shadow-md text-3xl sm:text-4xl">شكون أنت فالدزاير؟</span>
+            <span className="text-indigo-400 mt-3 block font-extrabold drop-shadow-md text-2xl sm:text-4xl">شكون أنت فالدزاير؟</span>
           </h1>
-          <p className="text-xl text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto">
             جاوب على بعض الأسئلة القصيرة في كل موضوع باش تكتشف بروفايلك الكامل في المجتمع. تقدر ديرهم كامل ولا تخير لي يعجبك!
           </p>
         </div>
@@ -84,16 +84,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <button
           onClick={startMarriageQuiz}
-          className="p-6 glass-panel hover:bg-white/5 border border-rose-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
+          className="p-4 sm:p-6 glass-panel hover:bg-white/5 border border-rose-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-2 h-full bg-rose-500"></div>
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-rose-500/20 rounded-xl text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors">
               <Heart className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">الاستعداد للزواج</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">الاستعداد للزواج</h3>
           </div>
-          <p className="text-sm text-gray-400">واش راك واجد للارتباط العاطفي وبناء أسرة؟ ولا مزال الوقت؟</p>
+          <p className="text-xs sm:text-sm text-gray-400">واش راك واجد للارتباط العاطفي وبناء أسرة؟ ولا مزال الوقت؟</p>
           {resultMarriage && (
             <div className="mt-4 inline-block px-3 py-1 bg-rose-500/20 border border-rose-500/30 rounded-full text-rose-300 text-xs font-bold">
                انتهى - شاهد النتيجة
@@ -103,16 +103,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
 
         <button
           onClick={startPersonalityQuiz}
-          className="p-6 glass-panel hover:bg-white/5 border border-indigo-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
+          className="p-4 sm:p-6 glass-panel hover:bg-white/5 border border-indigo-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-2 h-full bg-indigo-500"></div>
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-indigo-500/20 rounded-xl text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
               <Activity className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">الشخصية</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">الشخصية</h3>
           </div>
-          <p className="text-sm text-gray-400">واش من نوع من الشخصيات أنت في المجتمع الجزائري؟ النية، القافز، البارد؟</p>
+          <p className="text-xs sm:text-sm text-gray-400">واش من نوع من الشخصيات أنت في المجتمع الجزائري؟ النية، القافز، البارد؟</p>
           {resultPersonality && (
             <div className="mt-4 inline-block px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full text-indigo-300 text-xs font-bold">
                انتهى - شاهد النتيجة
@@ -122,16 +122,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
 
         <button
           onClick={startPoliticalQuiz}
-          className="p-6 glass-panel hover:bg-white/5 border border-emerald-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
+          className="p-4 sm:p-6 glass-panel hover:bg-white/5 border border-emerald-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-2 h-full bg-emerald-500"></div>
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-emerald-500/20 rounded-xl text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">القبيلة </h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">القبيلة </h3>
           </div>
-          <p className="text-sm text-gray-400">أي قبيلة سياسية تنتمي لها؟ هل أنت مع الغيير الجذري ولا الاستقرار؟</p>
+          <p className="text-xs sm:text-sm text-gray-400">أي قبيلة سياسية تنتمي لها؟ هل أنت مع الغيير الجذري ولا الاستقرار؟</p>
           {resultTribe && (
             <div className="mt-4 inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-emerald-300 text-xs font-bold">
                انتهى - شاهد النتيجة
@@ -141,16 +141,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
 
         <button
           onClick={startIdeologyQuiz}
-          className="p-6 glass-panel hover:bg-white/5 border border-amber-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
+          className="p-4 sm:p-6 glass-panel hover:bg-white/5 border border-amber-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-2 h-full bg-amber-500"></div>
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-amber-500/20 rounded-xl text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors">
               <Zap className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">الأيديولوجية</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">الأيديولوجية</h3>
           </div>
-          <p className="text-sm text-gray-400">واش هي أفكارك؟ اشتراكي، ليبرالي، قومي وطني ولا محافظ؟</p>
+          <p className="text-xs sm:text-sm text-gray-400">واش هي أفكارك؟ اشتراكي، ليبرالي، قومي وطني ولا محافظ؟</p>
           {resultIdeology && (
             <div className="mt-4 inline-block px-3 py-1 bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-300 text-xs font-bold">
                انتهى - شاهد النتيجة
@@ -160,16 +160,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
 
         <button
           onClick={startVotingQuiz}
-          className="p-6 glass-panel hover:bg-white/5 border border-pink-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
+          className="p-4 sm:p-6 glass-panel hover:bg-white/5 border border-pink-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-2 h-full bg-pink-500"></div>
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-pink-500/20 rounded-xl text-pink-400 group-hover:bg-pink-500 group-hover:text-white transition-colors">
               <CheckCircle2 className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">نمط التصويت</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">نمط التصويت</h3>
           </div>
-          <p className="text-sm text-gray-400">كيفاش تتعامل مع الانتخابات في الجزائر؟ تفوطي بالمصلحة والقناعة ولا تقاطع؟</p>
+          <p className="text-xs sm:text-sm text-gray-400">كيفاش تتعامل مع الانتخابات في الجزائر؟ تفوطي بالمصلحة والقناعة ولا تقاطع؟</p>
           {resultVotingStyle && (
             <div className="mt-4 inline-block px-3 py-1 bg-pink-500/20 border border-pink-500/30 rounded-full text-pink-300 text-xs font-bold">
                انتهى - شاهد النتيجة
@@ -179,16 +179,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = memo(({
 
         <button
           onClick={startRulerQuiz}
-          className="p-6 glass-panel hover:bg-white/5 border border-blue-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
+          className="p-4 sm:p-6 glass-panel hover:bg-white/5 border border-blue-500/20 text-right rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 group relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-2 h-full bg-blue-500"></div>
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-blue-500/20 rounded-xl text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
               <Brain className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">الملك الحاكم</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">الملك الحاكم</h3>
           </div>
-          <p className="text-sm text-gray-400">لوكان تحكم أنت، شكون هو الحاكم لي تشبهلو؟ قبضة حديدية ولا حاكم حكيم؟</p>
+          <p className="text-xs sm:text-sm text-gray-400">لوكان تحكم أنت، شكون هو الحاكم لي تشبهلو؟ قبضة حديدية ولا حاكم حكيم؟</p>
           {resultRuler && (
             <div className="mt-4 inline-block px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300 text-xs font-bold">
                انتهى - شاهد النتيجة

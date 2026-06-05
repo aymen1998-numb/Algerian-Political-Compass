@@ -55,7 +55,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = memo(({
         </div>
       </div>
 
-      <div className="glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl">
+      <div className="glass-panel rounded-3xl p-4 sm:p-8 shadow-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -64,19 +64,19 @@ export const QuizScreen: React.FC<QuizScreenProps> = memo(({
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-white leading-tight">
+            <h2 className="text-xl sm:text-3xl font-bold mb-6 text-white leading-tight">
               {getText(questions[currentIndex]?.text || '', userGender || 'male')}
             </h2>
 
-            <div className="space-y-4">
+            <div className="space-y-3.5">
               {questions[currentIndex]?.answers?.map((answer: any, index: number) => (
                 <button
                   key={index}
                   onClick={() => onAnswer(answer)}
-                  className="w-full text-right p-5 rounded-2xl glass-panel glass-panel-hover transition-all text-lg font-medium text-gray-200 hover:text-white flex items-center group active:scale-[0.98]"
+                  className="w-full text-right p-4 sm:p-5 rounded-2xl glass-panel glass-panel-hover transition-all text-base sm:text-lg font-medium text-gray-200 hover:text-white flex items-center group active:scale-[0.98]"
                 >
-                  <div className={`w-8 h-8 rounded-full border-2 border-gray-600 group-hover:${colorBorderClass} flex items-center justify-center ml-4 shrink-0 transition-colors`}>
-                    <div className={`w-3 h-3 rounded-full ${colorBgClass} opacity-0 group-hover:opacity-100 transition-opacity`} />
+                  <div className={`w-7 h-7 rounded-full border-2 border-gray-600 group-hover:${colorBorderClass} flex items-center justify-center ml-3 shrink-0 transition-colors`}>
+                    <div className={`w-2.5 h-2.5 rounded-full ${colorBgClass} opacity-0 group-hover:opacity-100 transition-opacity`} />
                   </div>
                   <span>{getText(answer.text, userGender || 'male')}</span>
                 </button>

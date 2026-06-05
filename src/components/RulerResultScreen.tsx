@@ -138,29 +138,29 @@ export const RulerResultScreen: React.FC<RulerResultScreenProps> = memo(({
       style={{ backgroundColor: isGeneratingImage ? '#0f0f13' : undefined }}
     >
       {/* Header/Banner Section */}
-      <div className="relative p-6 sm:p-8 pb-10 text-center bg-gradient-to-b from-black/60 to-transparent">
+      <div className="relative p-5 sm:p-8 pb-8 text-center bg-gradient-to-b from-black/60 to-transparent">
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none ${RULERS[resultRuler].color}`}>
            {renderIcon(RULERS[resultRuler].icon, "w-[300px] h-[300px]")}
         </div>
 
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-2 mb-4">
+          <div className="inline-flex items-center gap-2 mb-3 sm:mb-4">
             <span className="h-px w-8 sm:w-16 bg-gradient-to-l from-current to-transparent opacity-50"></span>
-            <span className={`px-4 py-1.5 rounded-full bg-black/40 shadow-inner ${RULERS[resultRuler].color} font-bold text-xs tracking-widest uppercase border border-white/10 backdrop-blur-md`}>
+            <span className={`px-4 py-1.5 rounded-full bg-black/40 shadow-inner ${RULERS[resultRuler].color} font-bold text-[10px] sm:text-xs tracking-widest uppercase border border-white/10 backdrop-blur-md`}>
               البروفايل السياسي الشامل
             </span>
             <span className="h-px w-8 sm:w-16 bg-gradient-to-r from-current to-transparent opacity-50"></span>
           </div>
           
-          <h3 className="text-lg sm:text-xl text-gray-300 mb-2 font-medium">{userGender === 'male' ? 'لو كنتَ حاكماً لَكُنتَ' : 'لو كنتِ حاكمةً لَكُنتِ'}</h3>
-          <h2 className={`text-4xl sm:text-5xl font-black mb-4 leading-tight flex flex-col items-center justify-center gap-4 drop-shadow-2xl ${RULERS[resultRuler].color}`}>
-            <div className="p-4 sm:p-5 rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-              {renderIcon(RULERS[resultRuler].icon, "w-16 h-16 sm:w-20 sm:h-20 text-white")}
+          <h3 className="text-base sm:text-xl text-gray-300 mb-1 sm:mb-2 font-medium">{userGender === 'male' ? 'لو كنتَ حاكماً لَكُنتَ' : 'لو كنتِ حاكمةً لَكُنتِ'}</h3>
+          <h2 className={`text-3xl sm:text-5xl font-black mb-3 sm:mb-4 leading-tight flex flex-col items-center justify-center gap-3 sm:gap-4 drop-shadow-2xl ${RULERS[resultRuler].color}`}>
+            <div className="p-3.5 sm:p-5 rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+              {renderIcon(RULERS[resultRuler].icon, "w-14 h-14 sm:w-20 sm:h-20 text-white")}
             </div>
             <span className="tracking-tight">{getText(RULERS[resultRuler].name, userGender)}</span>
           </h2>
           
-          <p className="text-base sm:text-lg text-gray-200 leading-snug max-w-2xl mx-auto font-medium drop-shadow-md">
+          <p className="text-sm sm:text-lg text-gray-200 leading-normal max-w-2xl mx-auto font-medium drop-shadow-md">
             {getText(RULERS[resultRuler].description, userGender)}
           </p>
         </div>
@@ -320,52 +320,52 @@ export const RulerResultScreen: React.FC<RulerResultScreenProps> = memo(({
       </div>
 
       {!isGeneratingImage && !pendingQuiz && (
-        <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center p-6 sm:p-8 bg-black/50 border-t border-white/5 backdrop-blur-xl relative z-10">
+        <div className="grid grid-cols-2 sm:flex sm:flex-row sm:flex-wrap gap-2.5 sm:gap-4 justify-center p-4 sm:p-8 bg-black/50 border-t border-white/5 backdrop-blur-xl relative z-10">
           <button
             onClick={() => onShare('facebook', "البروفايل الكامل", "في بوصلة السياسة الجزائرية")}
-            className="flex-1 min-w-[200px] flex items-center justify-center gap-3 px-5 py-4 bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold rounded-2xl transition-all shadow-[0_0_15px_rgba(24,119,242,0.3)] hover:shadow-[0_0_25px_rgba(24,119,242,0.5)] active:scale-95 text-base"
+            className="col-span-1 sm:flex-1 min-w-[110px] sm:min-w-[200px] flex items-center justify-center gap-2 sm:gap-3 px-3 py-3 sm:px-5 sm:py-4 bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
           >
-            <Share2 className="w-5 h-5 fill-current" />
+            <Share2 className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
             <span>فيسبوك</span>
           </button>
 
           <button
             onClick={() => onShare('instagram', "البروفايل الكامل", "في بوصلة السياسة الجزائرية")}
-            className="flex-1 min-w-[150px] flex items-center justify-center gap-3 px-5 py-4 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] hover:opacity-90 text-white font-bold rounded-2xl transition-all shadow-[0_0_15px_rgba(230,104,60,0.3)] hover:shadow-[0_0_25px_rgba(230,104,60,0.5)] active:scale-95 text-base"
+            className="col-span-1 sm:flex-1 min-w-[110px] sm:min-w-[150px] flex items-center justify-center gap-2 sm:gap-3 px-3 py-3 sm:px-5 sm:py-4 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] hover:opacity-90 text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
           >
-            <Instagram className="w-5 h-5" />
+            <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
             <span>إنستغرام</span>
           </button>
 
           <button
             onClick={() => onShare('twitter', "البروفايل الكامل", "في بوصلة السياسة الجزائرية")}
-            className="flex-1 min-w-[150px] flex items-center justify-center gap-3 px-5 py-4 bg-black hover:bg-zinc-800 text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 border border-white/20 text-base"
+            className="col-span-1 sm:flex-1 min-w-[110px] sm:min-w-[150px] flex items-center justify-center gap-2 sm:gap-3 px-3 py-3 sm:px-5 sm:py-4 bg-black hover:bg-zinc-800 text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 border border-white/20 text-sm sm:text-base"
           >
-            <Twitter className="w-5 h-5 fill-current text-white" />
-            <span>X (تويتر)</span>
+            <Twitter className="w-4 h-4 sm:w-5 sm:h-5 fill-current text-white" />
+            <span>X</span>
           </button>
 
           <button
             onClick={() => onShare('whatsapp', "البروفايل الكامل", "في بوصلة السياسة الجزائرية")}
-            className="flex-1 min-w-[150px] flex items-center justify-center gap-3 px-5 py-4 bg-[#25D366] hover:bg-[#20BE5A] text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 text-base"
+            className="col-span-1 sm:flex-1 min-w-[110px] sm:min-w-[150px] flex items-center justify-center gap-2 sm:gap-3 px-3 py-3 sm:px-5 sm:py-4 bg-[#25D366] hover:bg-[#20BE5A] text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
           >
-            <MessageCircle className="w-5 h-5 fill-current" />
+            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
             <span>واتساب</span>
           </button>
 
           <button
             onClick={() => onShare('download', "البروفايل الكامل", "في بوصلة السياسة الجزائرية")}
-            className="flex-1 min-w-[150px] flex items-center justify-center gap-3 px-5 py-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 text-base"
+            className="col-span-2 sm:flex-1 min-w-[110px] sm:min-w-[150px] flex items-center justify-center gap-2 sm:gap-3 px-3 py-3.5 sm:px-5 sm:py-4 bg-zinc-800 hover:bg-zinc-700 border border-zinc-600 text-white font-bold rounded-2xl transition-all shadow-lg active:scale-95 text-sm sm:text-base"
           >
             <span>تحميل مباشر</span>
           </button>
           
-          <div className="w-full sm:w-auto basis-full mt-2 sm:mt-0">
+          <div className="col-span-2 w-full sm:w-auto sm:basis-full mt-1 sm:mt-0">
             <button
               onClick={onRestart}
-              className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-2xl transition-all active:scale-95 border border-white/10 text-base"
+              className="w-full flex items-center justify-center gap-2 sm:gap-3 px-6 py-3.5 sm:py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-2xl transition-all active:scale-95 border border-white/10 text-sm sm:text-base"
             >
-              <RotateCcw className="w-5 h-5" />
+              <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5" />
               <span>إعادة التجربة</span>
             </button>
           </div>

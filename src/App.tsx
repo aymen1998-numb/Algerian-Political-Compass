@@ -658,7 +658,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-zinc-950 text-gray-100 overflow-hidden relative">
+    <div className="min-h-screen w-full flex flex-col items-center justify-start sm:justify-center py-6 sm:py-12 px-3 sm:px-4 bg-zinc-950 text-gray-100 overflow-y-auto overflow-x-hidden relative">
       
       {/* Background gradients */}
       <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-zinc-800 rounded-full blur-[120px] opacity-30 pointer-events-none"></div>
