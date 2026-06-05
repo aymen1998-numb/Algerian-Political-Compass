@@ -664,7 +664,7 @@ export default function App() {
       <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-zinc-800 rounded-full blur-[120px] opacity-30 pointer-events-none"></div>
       <div className="absolute bottom-[20%] right-[20%] w-96 h-96 bg-indigo-900 rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
 
-      <main className="w-full max-w-2xl relative z-10">
+      <main className="w-full max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl relative z-10">
         <AnimatePresence mode="wait">
           
           {/* WELCOME SCREEN */}

@@ -35,7 +35,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = memo(({
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -50 }}
-      className="w-full max-w-2xl mx-auto"
+      className="w-full max-w-2xl md:max-w-3xl mx-auto"
     >
       <div className="mb-8">
         <div className={`flex justify-between items-center text-sm font-semibold ${colorClass} mb-3 glass-panel px-4 py-1.5 rounded-full border ${colorBorderClass} w-fit mb-4`}>
