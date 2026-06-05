@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dz-black: #0a0a0a;
+  --color-dz-dark: #121212;
+  --color-dz-green: #006233;
+  --color-dz-green-light: #008744;
+  --color-dz-gold: #c8a252;
+  --color-dz-gold-dark: #aa853c;
+  
+  --font-sans: 'Cairo', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--color-dz-dark);
+  color: #f3f4f6;
+  direction: rtl;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Hide AI Studio watermark and similar elements */
+#aistudio-watermark,
+#ai-studio-watermark,
+.ai-studio-watermark,
+[data-testid*="aistudio"],
+[data-testid*="ai-studio"],
+a[href*="aistudio.google.com"],
+a[href*="ai.studio"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity">
+  <!-- Adding a dark background for the PWA icon -->
+  <rect width="24" height="24" fill="#18181b" rx="4" />
+  <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-width="1.5" />
+</svg>

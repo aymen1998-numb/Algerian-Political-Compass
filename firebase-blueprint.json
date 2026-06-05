@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A registered user who can receive anonymous messages.",
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "User's display name"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "User's profile photo URL"
+        },
+        "createdAt": {
+          "type": "object",
+          "description": "Timestamp of account creation"
+        }
+      },
+      "required": ["displayName", "createdAt"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "An anonymous message sent to a user.",
+      "type": "object",
+      "properties": {
+        "recipientId": {
+          "type": "string",
+          "description": "ID of the user receiving the message"
+        },
+        "content": {
+          "type": "string",
+          "description": "The message content"
+        },
+        "createdAt": {
+          "type": "object",
+          "description": "Timestamp of when the message was sent"
+        }
+      },
+      "required": ["recipientId", "content", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/User"
+      },
+      "description": "Stores user profiles."
+    },
+    "messages/{messageId}": {
+      "schema": {
+        "$ref": "#/entities/Message"
+      },
+      "description": "Stores all anonymous messages."
+    }
+  }
+}

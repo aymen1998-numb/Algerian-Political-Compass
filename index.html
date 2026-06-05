@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أنا شكون؟ - اكتشف شخصيتك وتوجهاتك الجزائرية</title>
+    
+    <!-- Anti-DevTools Script -->
+    <script>
+      document.addEventListener('contextmenu', event => event.preventDefault());
+      document.onkeydown = function(e) {
+        if(e.keyCode == 123) { return false; }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; }
+      }
+    </script>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="أنا شكون؟ - اكتشف شخصيتك وتوجهاتك الجزائرية" />
+    <meta name="description" content="اختبار جزائري 100% لاكتشاف استعدادك للزواج، شخصيتك، توجهاتك السياسية، وأسلوبك القيادي بأسئلة من واقع المجتمع الجزائري." />
+    <meta name="keywords" content="اختبار شخصية, الجزائر, زواج, سياسة, توجه سياسي, كويز جزائري, اختبار نفسي" />
+    <meta name="author" content="Algerian Political Compass" />
+    
+    <!-- PWA Settings -->
+    <meta name="theme-color" content="#18181b">
+    <link rel="icon" type="image/svg+xml" href="/loading-logo.svg" />
+    <link rel="apple-touch-icon" href="/loading-logo.svg" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anachkoun.com/" />
+    <meta property="og:title" content="أنا شكون؟ - اكتشف شخصيتك وتوجهاتك الجزائرية" />
+    <meta property="og:description" content="اختبار جزائري 100% لاكتشاف استعدادك للزواج، شخصيتك، توجهاتك السياسية، وأسلوبك القيادي بأسئلة من واقع المجتمع الجزائري." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1549469752-646702a64c4c?q=80&w=1200&auto=format&fit=crop" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://anachkoun.com/" />
+    <meta property="twitter:title" content="أنا شكون؟ - اكتشف شخصيتك وتوجهاتك الجزائرية" />
+    <meta property="twitter:description" content="اختبار جزائري 100% لاكتشاف استعدادك للزواج، شخصيتك، توجهاتك السياسية، وأسلوبك القيادي بأسئلة من واقع المجتمع الجزائري." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1549469752-646702a64c4c?q=80&w=1200&auto=format&fit=crop" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="error-overlay" style="position:fixed; z-index:9999; top:0; left:0; width:100%; background:rgba(0,0,0,0.8); color:red; padding:20px; display:none; font-family:monospace; pointer-events:none;"></div>
+    <script>
+      window.onerror = function(message, source, lineno, colno, error) {
+        var overlay = document.getElementById('error-overlay');
+        overlay.style.display = 'block';
+        overlay.innerHTML += '<br>' + message + ' at ' + source + ':' + lineno + ':' + colno;
+      };
+      window.onunhandledrejection = function(event) {
+        var overlay = document.getElementById('error-overlay');
+        overlay.style.display = 'block';
+        overlay.innerHTML += '<br>Unhandled Promise: ' + event.reason;
+      };
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

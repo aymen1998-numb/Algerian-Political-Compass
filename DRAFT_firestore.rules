@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+       return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['displayName', 'createdAt']) &&
+             data.displayName is string && data.displayName.size() > 0 && data.displayName.size() <= 100 &&
+             ((!('photoURL' in data)) || (data.photoURL is string && data.photoURL.size() <= 500));
+    }
+
+    function isValidMessage(data) {
+      return data.keys().hasAll(['recipientId', 'content', 'createdAt']) &&
+             data.keys().size() == 3 &&
+             data.recipientId is string && isValidId(data.recipientId) &&
+             data.content is string && data.content.size() > 0 && data.content.size() <= 1000;
+    }
+
+    match /users/{userId} {
+      allow get: if true; // Public profile to allow sending messages
+      allow list: if false; // Don't list all users
+      
+      allow create: if isOwner(userId) &&
+                       isValidUser(incoming()) &&
+                       incoming().keys().size() <= 3 &&
+                       incoming().createdAt == request.time;
+                       
+      allow update: if isOwner(userId) &&
+                       isValidUser(incoming()) &&
+                       (!('createdAt' in incoming().diff(existing()).affectedKeys())) &&
+                       incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'photoURL']);
+                       
+      allow delete: if isOwner(userId);
+    }
+
+    match /messages/{messageId} {
+      // recipientId check to ensure anyone can only read their own messages.
+      allow read, list: if isAuthenticated() && existing().recipientId == request.auth.uid;
+
+      // Anyone can send a message, but they must follow the exact structure and the user must exist
+      allow create: if isValidMessage(incoming()) &&
+                       incoming().createdAt == request.time &&
+                       isValidId(incoming().recipientId) &&
+                       exists(/databases/$(database)/documents/users/$(incoming().recipientId));
+
+      allow update: if false; // Messages are immutable
+      
+      allow delete: if isAuthenticated() && existing().recipientId == request.auth.uid;
+    }
+  }
+}
